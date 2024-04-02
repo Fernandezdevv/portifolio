@@ -10,7 +10,8 @@
 body{
     background-color: rgba(255, 255, 255, 0.973);
     height:100vh;
-	overflow:auto;
+    overflow-x: hidden; 
+    overflow-y: auto;   
 }
 .inter{
     max-width: 1280px;
@@ -35,58 +36,70 @@ h2.titulo{
 h2.titulo span{
     color: #128f81;
 }
-
-section {
-    display: grid;
-    place-items: center;
-    align-items: center;
-    min-height: 100vh;
+nav.menu-lat{
+    width: 70px;
+    height: 100%;
+    background-color: #171A21;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #55555544;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 2s;
 }
-/* estilo cabeçalho */
-
-header {
-        width: 100%;
-        top: 0;
-        left: 0;
-        
-        transition: .5s;
-        background-color: #cecece;
-        padding: 20px 4%;
-        box-shadow: 0 0 30px #617073;
-        display: flex;
-       
-        
+nav.menu-lat.expandir{
+    width: 200px;
 }
-header > .inter {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     
-
+.pot-expandir{
+    width: 100%;
+    padding-left: 10px;
 }
-header a{
+
+.pot-expandir > i{
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+ul li.item-menu{
+    transition: 2s;
+}
+
+ul li.ativo{
+    background-color: #7A93AC;
+}
+ul li.item-menu:hover{
+    background: #7A93AC;
+}
+
+ul li.item-menu a{
     color: white;
     text-decoration: none;
-    display:inline-block;
-    transition: .2s;
-    text-align: left;
-    padding: 10px;
+    font-size: 22px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
 }
-header a:hover{
-
-     font-family: "poppins", sans-serif ;
-     transform: scale(1.20);
-     color: #617073;
+ul li.item-menu a .txt-link{
+    margin-left: 65px;
+    transition: 5s;
+    opacity: 0;
+}
+nav.menu-lat.expandir .txt-link{
+    margin-left: 35px;
+    opacity: 1;
 }
 
-header nav ul{
-   list-style-type: none;
+ul li.item-menu a .icon i{
+    font-size: 30px;
 }
 
-header nav ul li{
-      display: inline-block;
-      padding: 0 15px;
-      
 body{
     background-image: url(imagens/fundo.png.png);
     background-position: center;
@@ -95,7 +108,7 @@ body{
     background-size: cover;
     position: relative;
 }
-}
+
 section.inicio{
     position: relative;
     width: 100%;
@@ -217,7 +230,7 @@ section.inicio{
 
 section.sobre{
     background-color: white;
-    padding: 60px;
+    padding: 60px 10%;
     width: 100%;
     
     
@@ -284,12 +297,12 @@ section.sobre{
 }
 
 section.habilidades{
-    padding: 180px 4%;
+    padding: 180px 20%;
     background-image: url(imagens/fundo2.png);
     box-shadow: 0 0 20px #000000;
 }
 section.habilidades .flex{
-    gap: 160px;
+    gap: 160px ;
 }
 .habilidades h2{
     text-align: center;
@@ -362,7 +375,7 @@ section.habilidades .flex{
  }
 }
 footer{
-    padding: 30px 4%;
+    padding: 20px ;
     box-shadow: 0 0 40px 10px #cecece;
     background-color: #cecece;
 }
@@ -372,7 +385,7 @@ footer .flex{
 }
 
 footer .linha-footer{
-    padding: 20px 0;
+    padding: 20px;
 }
 
 footer .linha-footer{
@@ -391,23 +404,27 @@ footer .linha-footer{
     transition: 2s;
 }
 .social button i{
-    color: #1D8FA6;
+    color: #171A21;
 }
 .social button:hover{
     transform: scale(1.10);
     box-shadow: 0 0 20px #000000;
 }
 footer .linha-footer p i{
-    color: #1D8FA6;
+    color: #1C5CA0;
     font-size:24px;
-  
+     padding: 0 13%;
+     padding-right: 0%;
 }
 footer .linha-footer p a{
     color: rgb(0, 0, 0);
     font-size: 20px;
+
 }
 
 .linha-footer h2{
     font-size: 40px;
+    padding-left: 35%;
+    justify-content: center;
 }
 

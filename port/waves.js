@@ -12,3 +12,25 @@ window.addEventListener('scroll', function(){
     onda4.style.backgroundPositionX = 100 + rolagempos * -1 + 'px'
 
 })
+
+var menuItem = document.querySelectorAll('.item-menu')
+
+function selectLink(){
+    menuItem.forEach((item)=> 
+        item.classList.remove('ativo')
+    )
+    this.classList.add('ativo')
+}
+
+menuItem.forEach((item)=>
+   item.addEventListener('click' , selectLink)
+)
+
+//expandir menu
+
+var porExp = document.querySelector('#porExp')
+var menuSide = document.querySelector('.menu-lat')
+
+porExp.addEventListener('click', function(){
+    menuSide.classList.toggle('expandir')
+})
